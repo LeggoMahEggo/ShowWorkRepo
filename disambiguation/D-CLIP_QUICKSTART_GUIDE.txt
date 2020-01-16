@@ -1,0 +1,216 @@
+Disambiguation Command-Line Program (D-CLIP) Quickstart Guide
+-------------------------------------------------------------
+
+What's New (v1.3.1)
+-----------------
+-Nakdan Minority (nmin) datafiles can now be included in the datafile report
+
+What's New (v1.3)
+-----------------
+-aggregated sentence count reports on the training/testing/morphology/MLP/nakdan minority datafiles and the
+	precious/unprecious metals files
+-fixing of whitespace issues in tagged sheets
+
+What's New (v1.2)
+-----------------
+-tagging sheets for additional sentences (ie after main sheets have been made) can now be generated
+-added a secret option for inserting a fake word-type and sentence to a cases/training file
+
+
+What's New (v1.1)
+-----------------
+-the logging system can be disabled with the --nolog flag. This is intended only for debugging purposes, to prevent
+	the cluttering up of the log files
+
+
+
+PREREQUISITES
+-------------
+Required Folders: ~\disambiguation\Directory\(1+ word folders ONLY), ~\disambiguation\program
+
+Required Files: (program folder) d-clip_functions.py, d-clip.py, disautils_new.py, genclist_new.py, 
+	genreps.py, premshe_new.py, scofil_new.py, tagshegen_new.py
+	
+Optional Folder(s): ~\disambiguation\batch files (only required if running batch files; .dbf/.txt file extension)
+
+
+
+COMMANDS AND FLAGS
+------------------
+
+positional arguments:
+  word           the hebrew word to work on (not required when using --batch)
+
+
+DISAMBIGUATION (required):
+  list of actions that can be performed on a particular hebrew word
+
+  --batch BATCH  executes a series of disambiguation actions from a .dbf/.txt
+                 file (cannot be combined with 'word')
+  --cases        generates a cases file
+  --tsheets      generates tagging sheets
+  --esheets      generates 'extra' tagging sheets (for adding additional
+                 sentences after main tagging sheets have been generated)
+  --score        generates scoring files based on tagged sheets
+  --mlpscore     generates scoring files based on MLP tagged sheets
+  --precious     generates a precious metals file
+  --unprecious   generates an unprecious metals file
+  --dreport      generates a datafile report
+  --treport      generates a tagged sheets report
+  --mreport      generates a precious metals files report
+  --aggreport    generates an aggregated sentence count report
+  --fixsheets    fixes whitespace issues with tagged sheets
+
+FLAGS:
+  list of flags to use with the disambiguation actions
+
+EXCEL:
+  excel flags
+
+  --excel        creates an excel sheet version of the file generated (not
+                 available for reports or --mlpscore)
+  --ltr          sets the direction of the sheet to 'left-to-right' (default
+                 'right-to-left')
+  --autofilter      enables the autofilter option
+
+CASES:
+  cases flags (mutually exclusive)
+
+  --new          a flag for creating a new cases file
+  --overwrite    a flag for overwriting an existing cases file
+  --regen        a flag for regenerating the cases file with marked cases left
+                 intact
+
+DATAFILE:
+  datafile flags
+
+  --alld         a flag to include all datafiles in the datafile
+                 report/tagging sheets
+  --train        a flag to include the training datafile in the datafile
+                 report/tagging sheets
+  --test         a flag to include the testing datafile in the datafile
+                 report/tagging sheets
+  --bitmorph     a flag to include the morphology datafile in the datafile
+                 report/tagging sheets
+  --mlp          a flag to include the MLP datafile in the datafile
+                 report/tagging sheets
+  --nmin         a flag to include the Nakdan Minority (nmin) for datafile
+                 reports ONLY
+
+REPORT:
+  report flags
+
+  --pfile        a flag for --dreport to generate a file filled with
+                 problematic lines
+
+OTHER:
+  miscellaneous flags
+
+  --nolog        a flag for supressing the logging system. FOR DEBUGGING ONLY!
+
+
+SECRET OPTIONS (do not show up with the help command)
+---------------------------------------------------
+--faketype		an option for inserting a fake word-type and sentence into a cases and training datafile for the purpose
+					of using the sentences of a training datafile with 1 word-type, for k-rules
+
+NOTE: --faketype will overwrite the training datafile, so be VERY careful when using this option!
+
+
+
+RUNNING D-CLIP
+-------------
+To run D-CLIP, move to the 'program' subdirectory in a terminal, and execute the following:
+	>>python d-clip.py [word] (commands here)
+
+NOTE: D-CLIP will write logs to 'disambiguation.log', and stack traces to 'stack_trace.log'
+
+
+EXAMPLES (using אתם)
+--------------------
+Creating a new cases file: 
+	>>python d-clip.py אתם --cases --new
+	
+Creating a datafile report on all available datafiles: 
+	>>python d-clip.py אתם --dreport --alld
+	
+Creating a datafile report on all available datafiles, and generate a second file with problem lines listed: 
+	>>python d-clip.py אתם --dreport --alld --pfile
+	
+Creating tagging sheets with training and testing datafiles, and also creating an excel file with autofilter enabled
+	>>python d-clip.py אתם --tsheets --train --test --excel --autofilter
+
+Creating precious and unprecious metals files:
+	>>python d-clip.py אתם --precious
+	>>python d-clip.py אתם --unprecious
+	
+
+
+RUNNING OVER MULTIPLE WORDS
+---------------------------
+It is possible to run the same command over different words:
+
+Create a datafile report on all available datafiles for the words אתם, אחד, and אחר: 
+	>>python d-clip.py אתם,אחד,אחר --dreport --alld
+
+Create a datafile report on all available datafiles for all available words (WARNING: may take extreme amounts of time):
+	>>python d-clip.py all --dreport --alld
+
+
+
+RUNNING BATCH FILES
+-------------------
+Batch files (.dbf/.txt) contain commands that can be executed in sequence, with different commands for different words.
+
+To run a batch file, enter the following:
+	>>python d-clip.py --batch (file_name).dbf
+
+You can leave comments in a batch file by inserting an '#' into the line; it and everything afterwards will be ignored, as will blank lines.
+
+If errors are found, the user will be notified and asked if they wish to continue execution (problematic line will not be executed)
+
+
+
+BATCH FILE FORMATTING (current version)
+---------------------------------------
+VARIETY #1: Execute on all/some words (first line must only contain 'all', no quotes, or requested words, ie אתם,אחד,אחר)
+
+# This is a test comment
+ 
+אחד,אתם # A comment here
+--dreport --train --test --bitmorph
+--cases --regen # More comments
+# another comment
+
+--cases --overwrite --help
+--tsheets --alld
+
+
+VARIETY #2: Execute specific commands on specific words (hebrew word followed by commands)
+
+ # This is a test comment
+אחד
+--dreport --train --test --bitmorph
+--cases --regen
+# another comment
+
+אתם # A third comment
+--cases --overwrite --help
+--tsheets --alld
+
+
+
+
+
+
+VERSION HISTORY
+---------------
+v1.3.1: Added nmin datafiles to the datafile report
+v1.3: Added the ability to fix whitespace issues in tagged sheets,
+      Added the ability to generate reports on aggregated sentence counts of datafiles and precious/unprecious metals files
+v1.2: Added the ability to generate new sheets of sentences to tag after the main sheets have been generated,
+      Added a secret option for adding fake word-types and sentences for k-rules
+v1.1: Added supression of logging functionality for debugging purposes
+v1.0: Initial release
+
+

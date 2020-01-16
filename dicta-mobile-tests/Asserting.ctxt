@@ -1,0 +1,9 @@
+#BlueJ class context
+comment0.target=Asserting
+comment1.params=
+comment1.target=Asserting()
+comment2.params=testing\ expected
+comment2.target=void\ DoAssertEquals(java.lang.Object,\ java.lang.Object)
+comment3.params=testing\ expected
+comment3.target=void\ DoAssertNotEquals(java.lang.Object,\ java.lang.Object)
+numComments=4

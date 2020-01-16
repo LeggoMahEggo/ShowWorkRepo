@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<main>
+	<page name="test_navbar" lang="heb" link="https://nakdan.dicta.org.il/">
+		<webelement name="navbar" xpath="(//a[@class='a-hover'])[2]" id="navbarDropdown" />
+		<webelement name="classify_link" xpath="(//a[@class='tool-link'])[2]" id="" />
+		<webelement name="synopsis_link" xpath="(//a[@class='tool-link'])[3]" id="" />
+		<webelement name="tanach_link" xpath="(//a[@class='tool-link'])[6]" id="" />
+		<webelement name="citation_link" xpath="(//a[@class='tool-link'])[5]" id="" />
+		<webelement name="nakdan_link" xpath="(//a[@class='tool-link'])[1]" id="" />
+	</page>
+	<page name="test_nakdan_simple_mobile" lang="heb" link="https://nakdan.dicta.org.il/">
+		<!-- Main nakdan elements -->
+		<webelement name="textarea_insert" xpath="" id="text-wrap" />
+		<webelement name="textarea_results" xpath="//div[contains(@class, 'main-results-box')]" id="" />
+		<webelement name="textarea_texts" xpath="//span[contains(@id, 'span-C')]" id="" />
+		<webelement name="nikud_button" xpath="(//button[contains(text(), 'ניקוד')])[1]" id="" />
+		
+		<!-- Word option elements -->
+		<webelement name="apply_word_option" xpath="" id="apply-button" />
+		<webelement name="changed_word" xpath="(//span[contains(@id, 'span-C') and contains(@class, 'altered-word')])[1]" id="" />
+		
+		<webelement name="word_option_list" xpath="//div[contains(@id, 'option-row')]" id="" />
+		<webelement name="toolbar_button" xpath="//span[contains(@class, 'morph-box-btn')]" id="" />
+		<webelement name="morphology_button" xpath="//div[contains(@class, 'custom-control custom-switch')]" id="" />
+		<webelement name="morphology_description_list" xpath="//div[contains(@id, 'option-row')]/div" id="" />
+		
+		<webelement name="manual_option" xpath="//div[contains(text(), 'ניקוד ידני')]" id="" />
+		<webelement name="letter_selections" xpath="//div[contains(@class, 'word-letters-screen')]/div/span" id="" />
+		<webelement name="letter_options" xpath="//span[contains(@class, 'letter-in-nikud-option-button')]" id="" />
+		<webelement name="add_dagesh" xpath="//span[contains(text(), 'הוסף דגש')]" id="" />
+		<webelement name="set_eim_kriah" xpath="//span[contains(text(), 'הגדר אם קריאה')]" id="" />
+		
+		<!-- Results screen elements (top of screen) -->
+		<webelement name="load_new_text" xpath="//span[contains(@class, 'tool-btn') and ./i[contains(@class, 'fa-arrow-right')]]" id="" />
+		<webelement name="copy_results" xpath="//span[./i[contains(@class, 'fa-clone')]]" id="" />
+		<webelement name="share_button" xpath="" id="share" />
+		<webelement name="whatsapp_button" xpath="//a[./i[contains(@class, 'fa-whatsapp')]]" id="" />
+		<webelement name="facebook_button" xpath="//a[./i[contains(@class, 'fa-facebook')]]" id="" />
+		<webelement name="email_button" xpath="//a[./i[contains(@class, 'fa-envelope')]]" id="" />
+		<webelement name="options_button" xpath="//span[./i[contains(@class, 'fa-ellipsis')]]" id="" />
+		
+		<!-- Gmail elements (for Email Share only)
+		<webelement name="gmail_email_textbox" xpath="//input[@type='email']" id="" />
+		<webelement name="gmail_password_textbox" xpath="//input[@type='password']" id="" />
+		<webelement name="gmail_password_input_button" xpath="" id="identifierNext" />
+		<webelement name="gmail_login_button" xpath="" id="passwordNext" /> -->
+		
+		<!-- Facebook elements (for Facebook Share only) -->
+		<webelement name="email_textbox" xpath="(//input[contains(@class, 'inputtext')])[1]" id="" />
+		<webelement name="password_textbox" xpath="(//input[contains(@class, 'inputtext')])[2]" id="" />
+		<webelement name="login_button" xpath="//input[@name='login']" id="" />
+		
+		<!-- Test email and password -->
+		<text name="email" value="mas.dev.taken@gmail.com" />
+		<text name="password" value="dicta-info-613" />
+		
+		<!-- Options popup -->
+		<webelement name="back_arrow" xpath="//div[contains(@class, 'more-results-tools-header')]/span" id="" />
+		<webelement name="plus_font_size" xpath="//span[./i[contains(@class, 'fa-plus')]]" id="" />
+		<webelement name="minus_font_size" xpath="//span[./i[contains(@class, 'fa-minus')]]" id="" />
+		<webelement name="eim_kriah_checkbox" xpath="//div[contains(@class, 'custom-control custom-checkbox')]//input" id="" />
+		<webelement name="save_options" xpath="//div[@class='more-results-tools-footer']//button" id="" />
+		
+		<!-- Popup to load new text -->
+		<webelement name="popup_new_text" xpath="" id="back-to-text-modal___BV_modal_body_" />
+		<webelement name="nomore_popup_checkbox" xpath="(//label[contains(@class, 'custom-control-label')])[3]" id="" />
+		<webelement name="goto_new_text" xpath="//button[contains(text(), 'עבור')]" id="" />
+		
+		<!-- etc stuff -->
+		<webelement name="nikud_optionbar" xpath="//div[contains(@class, 'controls-inner')]" id="" />
+		<webelement name="nikud_optionbar_x" xpath="//span[./i[contains(@class, 'fa-times')]]" id="" />
+		
+		<!-- Nikud style elements -->
+		<webelement name="style_select" xpath="(//a[contains(text(), 'סגנון')])[1]" id="" />
+		<webelement name="style_confirm" xpath="(//button[contains(text(), 'שמור')])[1]" id="" />
+		
+		<webelement name="style_modern" xpath="(//div[contains(@class, 'radio')])[1]" id="" />
+		<webelement name="style_rabinic" xpath="(//div[contains(@class, 'radio')])[2]" id="" />
+		<webelement name="style_poetry" xpath="(//div[contains(@class, 'radio')])[3]" id="" />
+		
+		<!-- Texts to test -->
+		<text name="test_text_modern" value="ויאמר ה' אל משה ואל אלעזר בן אהרן הכהן לאמר" />
+		<text name="test_text_rabinic" value="אלא (יט) [יט] שהכל, והרא&quot;&quot;ש (ברכות פ&quot;&quot;ו סי' יח) כתב דאפשר (נג) שאם נכנס טעם הפרי במים מברך בורא פרי העץ:" />
+		<text name="test_text_poetry" value="אז ישיר משה ובני ישראל את השירה הזאת" />
+		<text name="expected_text_modern" value="וַיֹּאמֶר ה' אֶל מֹשֶׁה וְאֶל אֶלְעָזָר בֶּן אַהֲרֹן הַכֹּהֵן לֵאמֹר" />
+		<text name="expected_text_rabinic" value="אֶלָּא (יט) [יט] שֶׁהַכֹּל, וְהָרֹא&quot;&quot;שׁ (ברכות פ&quot;&quot;ו סי' יח) כָּתַב דְּאֶפְשָׁר (נג) שֶׁאִם נִכְנַס טַעַם הַפְּרִי בַּמַּיִם מְבָרֵךְ בּוֹרֵא פְּרִי הָעֵץ:" />
+		<text name="expected_text_poetry" value="אָז יָשִׁיר מֹשֶׁה וּבְנֵי יִשְׂרָאֵל אֶת הַשִּׁירָה הַזֹּאת" />
+	</page>
+	
+	<page name="test_nakdan_simple_mobile" lang="eng" link="https://nakdan.dicta.org.il/">
+		<!-- Main nakdan elements -->
+		<webelement name="textarea_insert" xpath="" id="text-wrap" />
+		<webelement name="textarea_results" xpath="//div[contains(@class, 'main-results-box')]" id="" />
+		<webelement name="textarea_texts" xpath="//span[contains(@id, 'span-C')]" id="" />
+		<webelement name="nikud_button" xpath="//button[contains(text(), 'Nikud')]" id="" />
+		
+		<!-- Word option elements -->
+		<webelement name="apply_word_option" xpath="" id="apply-button" />
+		<webelement name="changed_word" xpath="(//span[contains(@id, 'span-C') and contains(@class, 'altered-word')])[1]" id="" />
+		
+		<webelement name="word_option_list" xpath="//div[contains(@id, 'option-row')]" id="" />
+		<webelement name="toolbar_button" xpath="//span[contains(@class, 'morph-box-btn')]" id="" />
+		<webelement name="morphology_button" xpath="//div[contains(@class, 'custom-control custom-switch')]" id="" />
+		<webelement name="morphology_description_list" xpath="//div[contains(@id, 'option-row')]/div" id="" />
+		
+		<webelement name="manual_option" xpath="//div[contains(text(), 'Manual Nikud')]" id="" />
+		<webelement name="letter_selections" xpath="//div[contains(@class, 'word-letters-screen')]/div/span" id="" />
+		<webelement name="letter_options" xpath="//span[contains(@class, 'letter-in-nikud-option-button')]" id="" />
+		<webelement name="add_dagesh" xpath="//span[contains(text(), 'Add Dagesh')]" id="" />
+		<webelement name="set_eim_kriah" xpath="//span[contains(text(), 'Set matres lectionis')]" id="" />
+		
+		<!-- Results screen elements (top of screen) -->
+		<webelement name="load_new_text" xpath="//span[./i[contains(@class, 'arrow')] and ../../span[contains(@class, 'tool-btn')]]" id="" />
+		<webelement name="copy_results" xpath="//span[./i[contains(@class, 'fa-clone')]]" id="" />
+		<webelement name="share_button" xpath="" id="share" />
+		<webelement name="whatsapp_button" xpath="//a[./i[contains(@class, 'fa-whatsapp')]]" id="" />
+		<webelement name="facebook_button" xpath="//a[./i[contains(@class, 'fa-facebook')]]" id="" />
+		<webelement name="email_button" xpath="//a[./i[contains(@class, 'fa-envelope')]]" id="" />
+		<webelement name="options_button" xpath="//span[./i[contains(@class, 'fa-ellipsis')]]" id="" />
+		
+		<!-- Gmail elements (for Email Share only)
+		<webelement name="gmail_email_textbox" xpath="//input[@type='email']" id="" />
+		<webelement name="gmail_password_textbox" xpath="//input[@type='password']" id="" />
+		<webelement name="gmail_password_input_button" xpath="" id="identifierNext" />
+		<webelement name="gmail_login_button" xpath="" id="passwordNext" /> -->
+		
+		<!-- Facebook elements (for Facebook Share only) -->
+		<webelement name="email_textbox" xpath="(//input[contains(@class, 'inputtext')])[1]" id="" />
+		<webelement name="password_textbox" xpath="(//input[contains(@class, 'inputtext')])[2]" id="" />
+		<webelement name="login_button" xpath="//input[@name='login']" id="" />
+		
+		<!-- Test email and password -->
+		<text name="email" value="mas.dev.taken@gmail.com" />
+		<text name="password" value="dicta-info-613" />
+		
+		<!-- Options popup -->
+		<webelement name="back_arrow" xpath="//div[contains(@class, 'more-results-tools-header')]/span" id="" />
+		<webelement name="plus_font_size" xpath="//span[./i[contains(@class, 'fa-plus')]]" id="" />
+		<webelement name="minus_font_size" xpath="//span[./i[contains(@class, 'fa-minus')]]" id="" />
+		<webelement name="eim_kriah_checkbox" xpath="//div[contains(@class, 'custom-control custom-checkbox')]//input" id="" />
+		<webelement name="save_options" xpath="//div[@class='more-results-tools-footer']//button" id="" />
+		
+		<!-- Popup to load new text -->
+		<webelement name="popup_new_text" xpath="" id="back-to-text-modal___BV_modal_body_" />
+		<webelement name="nomore_popup_checkbox" xpath="(//label[contains(@class, 'custom-control-label')])[3]" id="" />
+		<webelement name="goto_new_text" xpath="//button[contains(text(), 'Go')]" id="" />
+		
+		<!-- etc stuff -->
+		<webelement name="nikud_optionbar" xpath="//div[contains(@class, 'controls-inner')]" id="" />
+		<webelement name="nikud_optionbar_x" xpath="//span[./i[contains(@class, 'fa-times')]]" id="" />
+		
+		<!-- Nikud style elements -->
+		<webelement name="style_select" xpath="(//a[contains(text(), 'Style')])[1]" id="" />
+		<webelement name="style_confirm" xpath="(//button[contains(text(), 'Save')])[1]" id="" />
+		
+		<webelement name="style_modern" xpath="(//div[contains(@class, 'radio')])[1]" id="" />
+		<webelement name="style_rabinic" xpath="(//div[contains(@class, 'radio')])[2]" id="" />
+		<webelement name="style_poetry" xpath="(//div[contains(@class, 'radio')])[3]" id="" />
+		
+		<!-- Texts to test -->
+		<text name="test_text_modern" value="ויאמר ה' אל משה ואל אלעזר בן אהרן הכהן לאמר" />
+		<text name="test_text_rabinic" value="אלא (יט) [יט] שהכל, והרא&quot;&quot;ש (ברכות פ&quot;&quot;ו סי' יח) כתב דאפשר (נג) שאם נכנס טעם הפרי במים מברך בורא פרי העץ:" />
+		<text name="test_text_poetry" value="אז ישיר משה ובני ישראל את השירה הזאת" />
+		<text name="expected_text_modern" value="וַיֹּאמֶר ה' אֶל מֹשֶׁה וְאֶל אֶלְעָזָר בֶּן אַהֲרֹן הַכֹּהֵן לֵאמֹר" />
+		<text name="expected_text_rabinic" value="אֶלָּא (יט) [יט] שֶׁהַכֹּל, וְהָרֹא&quot;&quot;שׁ (ברכות פ&quot;&quot;ו סי' יח) כָּתַב דְּאֶפְשָׁר (נג) שֶׁאִם נִכְנַס טַעַם הַפְּרִי בַּמַּיִם מְבָרֵךְ בּוֹרֵא פְּרִי הָעֵץ:" />
+		<text name="expected_text_poetry" value="אָז יָשִׁיר מֹשֶׁה וּבְנֵי יִשְׂרָאֵל אֶת הַשִּׁירָה הַזֹּאת" />
+	</page>
+	<page name="test_talnach_search_mobile" lang="heb">
+		<!-- above refers to talmud/tanach, hence 'talnach' -->
+	
+		<!-- Initial search page -->
+		<webelement name="search_textbox_initial" xpath="//input[contains(@class, 'home-search')]" id="" />
+		<webelement name="search_button_initial" xpath="" id="mobile_search_button" />
+		<webelement name="switch_language" xpath="//div[contains(@class, 'lang-switch')]" id="" />
+		
+		<!-- Results page -->
+		<webelement name="results_list" xpath="//li[contains(@class, 'result-li')]" id="" />
+		<webelement name="results_text_part" xpath="//div[contains(@class, 'result-li-resultBottom')]" id="" />
+		<webelement name="results_source_part" xpath="//div[contains(@class, 'result-li-top-section')]/a" id="" />
+		<webelement name="sidebar_button" xpath="//a[contains(@class, 'btn-sidebar')]" id="" />
+		<!--<webelement name="to_search_page" xpath="//div[contains(@class, 'mobile-header')]/a" id="" />-->
+		<webelement name="to_search_page" xpath="(//div[contains(@class, 'result-main')]/div)[1]" id="" />
+		<webelement name="search_button" xpath="(//button[contains(@class, 'search-bt')])[2]" id="" />
+		<webelement name="search_textbox" xpath="//input[contains(@class, 'search-form-control')]" id="" />
+		
+		<!-- Stuff in sources -->
+		<webelement name="pasuk_extra_options" xpath="//a[@href='#']" id="" />
+		<webelement name="to_sefaria_source" xpath="//a[contains(@class, 'sefaria-mobile')]" id="" />
+		<webelement name="source_of_result_dropdown" xpath="//a[.//*[contains(@class, 'f-narkis')]]" id="" />
+		<webelement name="source_of_result" xpath="//div[@id='mobile-menu-links']/descendant::li/div" id="" />
+		<webelement name="morphology_breakdown" xpath="(//div[contains(@class, 'mobile-list-menu') and contains(@class, 'no-gutters')])[1]" id="" />
+		<webelement name="meanings_breakdown" xpath="(//div[contains(@class, 'mobile-list-menu') and contains(@class, 'no-gutters')])[2]" id="" />
+		<webelement name="breakdown_rows" xpath="//div[contains(@class, 'list-wrap')]/div" id="" />
+
+		
+		<!-- Sidebar -->
+		<webelement name="back_button" xpath="//a[contains(@class, 'back-button')]" id="" />
+		<webelement name="apply_selections_button" xpath="//h2[@class='f white btn-text']" id="" />
+		
+		<!-- Sorting -->
+		<webelement name="sorting_button" xpath="(//a[@class='mobile-menu-link'])[1]" id="" />
+		<webelement name="relevance_radio_button" xpath="(//div[contains(@class, 'list-holder')]/ul//label)[1]" id="" />
+		<webelement name="talnach_order_radio_button" xpath="(//div[contains(@class, 'list-holder')]/ul//label)[2]" id="" />
+		
+		<!-- Filtering -->
+		<!-- Meanings -->
+		<webelement name="filter_meanings_button" xpath="(//a[@class='mobile-menu-link'])[2]" id="" />
+		<webelement name="filter_meanings_dropdowns" xpath="//div[@id='meaning-slide']//a[contains(@class, 'mobile-accordion-link')]" id="" />
+		<webelement name="filter_meanings_options" xpath="//ul[contains(@class, 'inner-menu-list')]/li/a" id="" />
+		<webelement name="filter_meanings_synonyms_dropdowns" xpath="/following-sibling::div[contains(@class, 'expand-holder')]" id="" />
+		<webelement name="filter_meanings_synonyms_switches" xpath="//label[@class='switch']" id="" />
+		<!-- Wordforms -->
+		<!--<webelement name="filter_wordforms_button" xpath="(//a[@class='mobile-menu-link'])[3]" id="" />-->
+		<webelement name="filter_wordforms_button_heb" xpath="//a[contains(@class, 'mobile-menu-link') and ./*[contains(text(), 'הטיות')]]" id="" />
+		<webelement name="filter_wordforms_button_eng" xpath="//a[contains(@class, 'mobile-menu-link') and ./*[contains(text(), 'forms')]]" id="" />
+		<webelement name="filter_wordforms_dropdowns" xpath="//div[@id='wordform-slide']//a[contains(@class, 'mobile-accordion-link')]" id="" />
+		<webelement name="filter_wordforms_options" xpath="//ul[contains(@class, 'inner-menu-list')]/li" id="" />
+		
+		<!-- Books -->
+		<!--<webelement name="filter_books_button" xpath="(//a[@class='mobile-menu-link'])[4]" id="" />-->
+		<webelement name="filter_books_button_heb" xpath="//a[contains(@class, 'mobile-menu-link') and ./*[contains(text(), 'ספרים')]]" id="" />
+		<webelement name="filter_books_button_eng" xpath="//a[contains(@class, 'mobile-menu-link') and ./*[contains(text(), 'Books')]]" id="" />
+		<webelement name="filter_books_dropdowns" xpath="//div[@id='book-slide']//a[contains(@class, 'mobile-accordion-link')]" id="" />	
+		<webelement name="filter_books_options" xpath="//ul[contains(@class, 'inner-menu-list')]/li" id="" />
+		
+		<!-- Display -->
+		<!--<webelement name="display_options_button" xpath="(//a[@class='mobile-menu-link'])[5]" id="" />-->
+		<webelement name="display_options_button_heb" xpath="//a[contains(@class, 'mobile-menu-link') and ./*[contains(text(), 'תצוגה')]]" id="" />
+		<webelement name="display_options_button_eng" xpath="//a[contains(@class, 'mobile-menu-link') and ./*[contains(text(), 'Display')]]" id="" />
+		<webelement name="display_nikud_styles" xpath="//button[contains(@class, 'text-detail-btn')]" id="" />
+		<webelement name="display_font_size_increase" xpath="(//button[contains(@class, 'font-detail-btn')])[3]" id="" />
+		<webelement name="display_font_size_decrease" xpath="(//button[contains(@class, 'font-detail-btn')])[1]" id="" />
+		<webelement name="display_results_per_page" xpath="//div[contains(@class, 'd-details-list')][2]//button" id="" />
+		
+		<!-- Download -->
+		<!--<webelement name="download_options_button" xpath="(//a[@class='mobile-menu-link'])[6]" id="" />-->
+		<webelement name="download_options_button_heb" xpath="//a[contains(@class, 'mobile-menu-link') and ./*[contains(text(), 'הורדת')]]" id="" />
+		<webelement name="download_options_button_eng" xpath="//a[contains(@class, 'mobile-menu-link') and ./*[contains(text(), 'Download')]]" id="" />
+		<webelement name="file_types_options" xpath="//div[@id='sorted-slide']/div[contains(@class, 'text-holder')]//a" id="" />
+		<webelement name="actual_download_button" xpath="//form[@method='POST']/button" id="" />
+		<!--<webelement name="no_holy_names_checkbox" xpath="//label[./descendant::h3[contains(@class, 'download-detail-check-text')]]" id="" />-->
+		<webelement name="no_holy_names_checkbox" xpath="//div[contains(@class, 'download-check-indicator')]" id="" />
+		
+		<!-- Pagination -->
+		<webelement name="total_results" xpath="(//strong)[4]" id="" />
+		<webelement name="no_results" xpath="//p[contains(@class, 'noresults')]" id="" />
+		<webelement name="amud_text" xpath="//div[contains(@class, 'pagination-holder')]/div/span" id="" />
+		<webelement name="results_previous_button" xpath="(//button[contains(@class, 'pagination__navigation')])[1]" id="" />
+		<webelement name="results_next_button" xpath="(//button[contains(@class, 'pagination__navigation')])[2]" id="" />
+		
+		<!-- Other -->
+		<webelement name="back_to_top" xpath="//div[contains(@class, 'back-to-top')]" id="" />
+	</page>
+</main>

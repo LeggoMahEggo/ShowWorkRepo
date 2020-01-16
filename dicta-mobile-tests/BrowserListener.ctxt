@@ -1,0 +1,9 @@
+#BlueJ class context
+comment0.target=BrowserListener
+comment1.params=testBrowser
+comment1.target=BrowserListener(Browser)
+comment2.params=element\ driver
+comment2.target=void\ beforeClickOn(org.openqa.selenium.WebElement,\ org.openqa.selenium.WebDriver)
+comment3.params=element\ driver
+comment3.target=void\ afterClickOn(org.openqa.selenium.WebElement,\ org.openqa.selenium.WebDriver)
+numComments=4

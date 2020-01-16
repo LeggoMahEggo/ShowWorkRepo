@@ -1,0 +1,7 @@
+#אילו,
+אל,אלי,אם,בני,הרי,כיוון,מדי,מדי
+--treport
+--score --excel --autofilter
+--precious --excel --autofilter
+--unprecious --excel --autofilter
+--mreport

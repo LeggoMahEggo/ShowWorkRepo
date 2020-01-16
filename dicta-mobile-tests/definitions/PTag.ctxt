@@ -1,0 +1,17 @@
+#BlueJ class context
+comment0.target=PTag
+comment1.params=name\ lang\ link
+comment1.target=PTag(java.lang.String,\ java.lang.String,\ java.lang.String)
+comment2.params=
+comment2.target=java.lang.String\ GetName()
+comment3.params=
+comment3.target=java.lang.String\ GetLang()
+comment4.params=
+comment4.target=java.lang.String\ GetLink()
+comment5.params=
+comment5.target=java.lang.String\ toString()
+comment6.params=obj
+comment6.target=boolean\ equals(java.lang.Object)
+comment7.params=
+comment7.target=int\ hashCode()
+numComments=8

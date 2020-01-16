@@ -1,0 +1,15 @@
+#BlueJ class context
+comment0.target=FileLoader
+comment1.params=
+comment1.target=FileLoader()
+comment2.params=fullPathToFile\ trimWhitespace
+comment2.target=java.util.List\ LoadTextFile(java.lang.String,\ boolean)
+comment3.params=fullPathToFile\ trimWhitespace
+comment3.target=java.util.List\ LoadHtmlFile(java.lang.String,\ boolean)
+comment4.params=fileStream\ trimWhitespace
+comment4.target=org.jsoup.nodes.Document\ LoadHtmlFile(java.io.InputStream,\ boolean)
+comment5.params=fullPathToFile\ trimWhitespace
+comment5.target=java.util.List\ LoadWordFile(java.lang.String,\ boolean)
+comment6.params=line
+comment6.target=java.lang.String\ TrimWhitespace(java.lang.String)
+numComments=7

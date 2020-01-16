@@ -1,0 +1,6 @@
+pandas
+whoosh
+flask
+flask-script
+zappa
+boto3

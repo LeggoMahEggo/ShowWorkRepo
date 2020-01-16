@@ -1,0 +1,17 @@
+#BlueJ class context
+comment0.target=WETag
+comment1.params=name\ xpath\ id
+comment1.target=WETag(java.lang.String,\ java.lang.String,\ java.lang.String)
+comment2.params=
+comment2.target=java.lang.String\ GetName()
+comment3.params=
+comment3.target=java.lang.String\ GetXPath()
+comment4.params=
+comment4.target=java.lang.String\ GetID()
+comment5.params=
+comment5.target=java.lang.String\ toString()
+comment6.params=obj
+comment6.target=boolean\ equals(java.lang.Object)
+comment7.params=
+comment7.target=int\ hashCode()
+numComments=8

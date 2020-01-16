@@ -1,0 +1,23 @@
+#BlueJ class context
+comment0.target=DefsHandler
+comment1.params=
+comment1.target=DefsHandler()
+comment10.params=pageName\ pageLang\ name\ value
+comment10.target=void\ AddTTagToPage(java.lang.String,\ java.lang.String,\ java.lang.String,\ java.lang.String)
+comment2.params=
+comment2.target=java.util.HashMap\ GetDefinitionData()
+comment3.params=pageName\ pageLang
+comment3.target=java.util.HashSet\ GetPageElements(java.lang.String,\ java.lang.String)
+comment4.params=tags\ name
+comment4.target=Tag\ GetTagByName(java.util.HashSet,\ java.lang.String)
+comment5.params=tags\ name
+comment5.target=WETag\ GetWebElementByName(java.util.HashSet,\ java.lang.String)
+comment6.params=tags\ name
+comment6.target=TTag\ GetTextTagByName(java.util.HashSet,\ java.lang.String)
+comment7.params=pageName\ pageLang
+comment7.target=PTag\ GetPageByCheck(java.lang.String,\ java.lang.String)
+comment8.params=pageName\ pageLang\ pageLink
+comment8.target=void\ AddPage(java.lang.String,\ java.lang.String,\ java.lang.String)
+comment9.params=pageName\ pageLang\ name\ xpath\ id
+comment9.target=void\ AddWETagToPage(java.lang.String,\ java.lang.String,\ java.lang.String,\ java.lang.String,\ java.lang.String)
+numComments=11

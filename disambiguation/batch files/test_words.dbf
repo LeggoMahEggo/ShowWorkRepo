@@ -1,0 +1,9 @@
+
+# This is a test comment
+אחד,אתם # A comment here
+--dreport --train --test --bitmorph
+--cases --regen # More comments
+# another comment
+
+--cases --overwrite --help
+--tsheets --alld

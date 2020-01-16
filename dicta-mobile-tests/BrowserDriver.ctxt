@@ -1,0 +1,17 @@
+#BlueJ class context
+comment0.target=BrowserDriver
+comment1.params=browserName
+comment1.target=BrowserDriver(java.lang.String)
+comment2.params=browserName\ downloadPath
+comment2.target=org.openqa.selenium.WebDriver\ SelectWebDriver(java.lang.String,\ java.lang.String)
+comment3.params=browserName
+comment3.target=java.lang.String\ SelectDriverProperty(java.lang.String)
+comment4.params=browserName
+comment4.target=java.lang.String\ SelectDriverPath(java.lang.String)
+comment5.params=downloadPath
+comment5.target=org.openqa.selenium.chrome.ChromeOptions\ SetChromeOptions(java.lang.String)
+comment6.params=downloadPath
+comment6.target=org.openqa.selenium.firefox.FirefoxOptions\ SetFirefoxProfile(java.lang.String)
+comment7.params=
+comment7.target=org.openqa.selenium.WebDriver\ GetWebDriver()
+numComments=8

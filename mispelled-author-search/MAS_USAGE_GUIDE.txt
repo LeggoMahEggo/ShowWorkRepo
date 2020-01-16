@@ -1,0 +1,78 @@
+MISPELLED AUTHOR SEARCH USAGE GUIDE
+-----------------------------------
+Request type: POST
+Url: https://bclkgexdbk.execute-api.eu-central-1.amazonaws.com/dev/api/v1/search
+NOTES: author names are read from a .py file; this is to speed up requests until there is a need for the .json database
+
+Required parameters
+-------------------
+1) "search_text"(string): the author name to search for
+2) "lang"(string): the language being used. Must be 'heb' or 'eng'
+NOTE: the search text language *must* match 'lang'
+
+3) "search_types"(list/array of string): which search algorithms to use. Available ones are 'exact', 'levenshtein', and 
+	'soundex'
+NOTE: search algorithms will be performed in the order they appear in the list. Also, any names found through a particular
+	search will not be appended to the final list of names (ie final list is a set of unique names)
+	
+	
+Optional parameters
+-------------------
+1) "max_score"(float): maximum amount of edit-distance allowed in the levenshtein algorithm, for every word in 
+	'search_text'. Default amount is 2.0
+	
+	
+Returned object
+---------------
+SUCCESS:
+	JSON object which has the following fields:
+		'final_names_found': a list of all the author names found by the requested search(es)
+		'search_results_specified': a list of dictionaries that contain data returned from each search performed:
+			'search_type': the type of search
+			'names_list': the authors found using this specific search
+			'unique_names_list': authors found using this specific search that were *NOT* found with previous searches
+			'other data': relevant ONLY for levenshtein. Returns a dictionary of all authors found with levenshtein, and
+				the score each one received (ie the sum of the edit-distance of every search word)
+	
+FAILURE:
+	JSON object which has the following fields:
+		'has_error': denotes that there was an error in processing the request (always True)
+		'error_messages': a list which contains the error message(s)
+		'stack_trace': a string of the stack trace of the Exception (if one occured, which will also be emailed to a 
+			dev email). None in the case of a different error
+			
+NOTE: if the search text is left blank, everything returned is empty		
+			
+			
+Sample Python usages
+--------------------			
+import requests
+import json
+
+url = "https://bclkgexdbk.execute-api.eu-central-1.amazonaws.com/dev/api/v1/search"
+
+# Search authors containing the token, 'יהוד', using hebrew and performing the exact, levenshtein, and soundex searches in the stated order
+textToSearch1 = "יהוד"
+data1 = {"search_text": textToSearch1, "lang": "heb", "search_types": ["exact", "levenshtein", "soundex"]}
+response1 = requests.post(url, json = data1)
+
+# Search authors containing the token 'שמועל', using hebrew and performing the levenshtein search with a max score of 3
+textToSearch2 = "שמועל"
+data2 = {"search_text": textToSearch2, "lang": "heb", "search_types": ["levenshtein"], "max_score": 3.0}
+response2 = requests.post(url, json = data2)
+
+
+
+
+
+
+			
+			
+			
+Sample cURL usages (problems currently with usage, please ignore until figured out)
+------------------------------------------------------------------------
+Search authors containing the token, 'יהוד', using hebrew and performing the exact, levenshtein, and soundex searches in the stated order:
+	curl -H "Content-Type:application/json" --data "{\"search_text\":\"יהוד\",\"lang\":\"heb\",\"search_types\":[\"exact\",\"levenshtein\",\"soundex\"]}" https://bclkgexdbk.execute-api.eu-central-1.amazonaws.com/dev/api/v1/search
+	
+Search authors containing the token 'שמועל', using hebrew and performing the levenshtein search with a max score of 3:
+	curl -H "Content-Type:application/json" --data "{\"search_text\":\"שמועל\",\"lang\":\"heb\",\"search_types\":[\"levenshtein\"],\"max_score\":3.0}" https://bclkgexdbk.execute-api.eu-central-1.amazonaws.com/dev/api/v1/search

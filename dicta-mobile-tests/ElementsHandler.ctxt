@@ -1,0 +1,27 @@
+#BlueJ class context
+comment0.target=ElementsHandler
+comment1.params=driver\ tags
+comment1.target=ElementsHandler(org.openqa.selenium.WebDriver,\ java.util.HashSet)
+comment10.params=xpath\ nullIfNotFound\ waitTime
+comment10.target=java.util.List\ GetElementsByXPath(java.lang.String,\ boolean,\ int)
+comment11.params=id\ nullIfNotFound
+comment11.target=java.util.List\ GetElementsByID(java.lang.String,\ boolean)
+comment12.params=id\ nullIfNotFound\ waitTime
+comment12.target=java.util.List\ GetElementsByID(java.lang.String,\ boolean,\ int)
+comment2.params=driver\ tags\ waitTime
+comment2.target=ElementsHandler(org.openqa.selenium.WebDriver,\ java.util.HashSet,\ int)
+comment3.params=tagName
+comment3.target=org.openqa.selenium.WebElement\ GetElementByDef(java.lang.String)
+comment4.params=tagName\ nullIfNotFound
+comment4.target=java.util.List\ GetElementsByDef(java.lang.String,\ boolean)
+comment5.params=id
+comment5.target=org.openqa.selenium.WebElement\ GetElementByID(java.lang.String)
+comment6.params=id\ waitTime
+comment6.target=org.openqa.selenium.WebElement\ GetElementByID(java.lang.String,\ int)
+comment7.params=xpath
+comment7.target=org.openqa.selenium.WebElement\ GetElementByXPath(java.lang.String)
+comment8.params=xpath\ waitTime
+comment8.target=org.openqa.selenium.WebElement\ GetElementByXPath(java.lang.String,\ int)
+comment9.params=xpath\ nullIfNotFound
+comment9.target=java.util.List\ GetElementsByXPath(java.lang.String,\ boolean)
+numComments=13
